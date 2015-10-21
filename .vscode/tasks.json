@@ -1,0 +1,14 @@
+{
+	"version": "0.1.0",
+	"command": "gulp",
+	"isShellCommand": true,
+	"showOutput": "always",
+	"args": [],
+	"tasks": [
+		{
+			"taskName": "emulate",
+			"showOutput": "always",
+			"isBuildCommand": true			
+		}
+	]	
+}
