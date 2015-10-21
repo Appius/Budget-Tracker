@@ -201,3 +201,9 @@ FakesAssemblies/
 [Pp]lugins/wp8.json
 [Pp]lugins/remote_ios.json
 [Pp]latforms/
+
+# NPM ignore
+node_modules/
+
+# Bower Modules
+lib/

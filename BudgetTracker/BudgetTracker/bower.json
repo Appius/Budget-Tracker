@@ -1,5 +1,8 @@
 {
-    "name": "BudgetTracker",
-    "dependencies": {
-    }
+	"name": "BudgetTracker",
+	"dependencies": {
+	},
+	"devDependencies": {
+		"ionic": "driftyco/ionic-bower#1.1.0"
+	}
 }
