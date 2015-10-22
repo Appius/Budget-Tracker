@@ -8,7 +8,7 @@
 		{
 			"taskName": "emulate",
 			"showOutput": "always",
-			"isBuildCommand": true			
+			"isBuildCommand": true
 		}
 	]	
 }
