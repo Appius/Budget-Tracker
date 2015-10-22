@@ -11,20 +11,7 @@ var paths = {
   sass: ['./scss/**/*.scss']
 };
 
-gulp.task('default', ['sass']);
-
-gulp.task('sass', function(done) {
-  gulp.src('./scss/ionic.app.scss')
-    .pipe(sass())
-    .on('error', sass.logError)
-    .pipe(gulp.dest('./www/css/'))
-    .pipe(minifyCss({
-      keepSpecialComments: 0
-    }))
-    .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./www/css/'))
-    .on('end', done);
-});
+gulp.task('default', []);
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
@@ -49,3 +36,30 @@ gulp.task('git-check', function(done) {
   }
   done();
 });
+
+gulp.task('ionic_sass', function(done) {
+  gulp.src('./lib/ionic/scss/ionic.app.scss')
+    .pipe(sass())
+    .on('error', sass.logError)
+    .pipe(gulp.dest('./lib/ionic/css/'))
+    .pipe(minifyCss({
+      keepSpecialComments: 0
+    }))
+    .pipe(rename({ extname: '.min.css' }))
+    .pipe(gulp.dest('./lib/ionic/css/'))
+    .on('end', done);
+});
+
+gulp.task('ionic_css', ['ionic_sass'], function(done){
+  gulp.src('./lib/ionic/css/ionic.min.css')
+    .pipe(gulp.dest('./www/lib/'))
+    .on('end', done);
+});
+
+gulp.task('ionic_js', function(done){
+  gulp.src('./lib/ionic/js/ionic.bundle.min.js')
+    .pipe(gulp.dest('./www/lib/'))
+    .on('end', done);
+});
+
+gulp.task('ionic_copy', ['ionic_css', 'ionic_js']);
