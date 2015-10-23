@@ -2,7 +2,7 @@
 <widget xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps" id="io.cordova.myapp40f657" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" defaultlocale="en-US">
   <name>BudgetTracker</name>
   <description>Simple Cordova application with Ionic Framework.</description>
-  <author href="http://cordova.io" email="dev@cordova.apache.org">Vladyslav Ushakoc</author>
+  <author href="http://91.224.157.99/" email="v.ushakov@kpi.in.ua">Vladyslav Ushakov</author>
   <content src="index.html" />
   <access origin="*" />
   <vs:features />
