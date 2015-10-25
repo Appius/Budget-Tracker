@@ -62,4 +62,26 @@ gulp.task('ionic_js', function(done){
     .on('end', done);
 });
 
-gulp.task('ionic_copy', ['ionic_css', 'ionic_js']);
+gulp.task('ionic_fonts', function (done) {
+  gulp.src('./lib/ionic/fonts/*.*')
+    .pipe(gulp.dest('./www/fonts/'))
+    .on('end', done);
+});
+
+gulp.task('ionic_copy', ['ionic_css', 'ionic_js', 'ionic_fonts']);
+
+gulp.task('fontawesome_fonts', function (done) {
+  gulp.src('./lib/fontawesome/fonts/*.*')
+    .pipe(gulp.dest('./www/fonts/'))
+    .on('end', done);
+});
+
+gulp.task('fontawesome_css', function (done) {
+  gulp.src('./lib/fontawesome/css/font-awesome.min.css')
+    .pipe(gulp.dest('./www/lib/'))
+    .on('end', done);
+});
+
+gulp.task('fontawesome_copy', ['fontawesome_fonts', 'fontawesome_css']);
+
+gulp.task('copy_libs', ['ionic_copy', 'fontawesome_copy']);
