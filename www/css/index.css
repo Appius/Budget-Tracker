@@ -1,2 +1,15 @@
 ﻿body {
 }
+
+
+#accounts-view ion-item a div.container{
+	width: 50px;
+	text-align: center;
+	display: inline-block;
+}
+
+#accounts-view ion-item a h2 {
+	display: inline-block;
+	vertical-align: top;
+	margin: 5px 5px 0;
+}

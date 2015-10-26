@@ -16,12 +16,22 @@ angular
 	.config(function($stateProvider, $urlRouterProvider) {
 		// Set up the various states which the app can be in.
 		$stateProvider
-			// setup an abstract state for the tabs directive
+
+			// Setup an abstract state for the tabs directive
 			.state('tab', {
-				url: '/tab',
+				// With abstract set to true, that means this state can not be explicitly activated.
+				// It can only be implicitly activated by activating one of its children.
 				"abstract": true,
+
+				// This abstract state will prepend '/contacts' onto the urls of all its children.
+				url: '/tab',
+
 				templateUrl: 'partials/tabs.html'
 			})
+
+			/*
+			 * Tabs > Dashboard
+			 */
 			.state('tab.dashboard', {
 				url: '/dashboard',
 				views: {
@@ -31,6 +41,10 @@ angular
 					}
 				}
 			})
+
+			/*
+			 * Tabs > Transactions
+			 */
 			.state('tab.transactions', {
 				url: '/transactions',
 				views: {
@@ -40,6 +54,10 @@ angular
 					}
 				}
 			})
+
+			/*
+			 * Tabs > Categories
+			 */
 			.state('tab.categories', {
 				url: '/categories',
 				views: {
@@ -49,12 +67,30 @@ angular
 					}
 				}
 			})
+
+			/*
+			 * Tabs > Accounts
+			 */
 			.state('tab.accounts', {
 				url: '/accounts',
 				views: {
 					'tab-accounts': {
 						templateUrl: 'partials/tab-accounts.html',
 						controller: 'AccountsCtrl'
+					}
+				}
+			})
+
+			/*
+			 * Tabs > Accounts > Edit
+			 */
+			.state('tab.accounts.edit', {
+				url: '/:accountId',
+
+				views: {
+					'tab-accounts': {
+						templateUrl: 'partials/edit-account.html',
+						controller: 'EditAccountCtrl'
 					}
 				}
 			});

@@ -1,10 +1,16 @@
-﻿<ion-view view-title="Accounts">
+﻿<ion-view id="accounts-view"
+		  title="Accounts">
+	<ion-nav-buttons side="secondary">
+		<a href='#/tab/accounts/-1' class='button button-balanced icon-left ion-plus-round button-clear'></a>
+	</ion-nav-buttons>
 	<ion-content>
 		<ion-list>
 			<ion-item ng-repeat="account in accounts"
-			          type="item-text-wrap"
+					  type="item-text-wrap"
 					  href="#/tab/accounts/{{account.id}}">
-				<img ng-src="{{account.pic}}" alt="pic" width="50" height="50">
+				<div class="container">
+					<i class="fa {{account.icon}} fa-2x"></i>
+				</div>
 				<h2>{{account.name}}</h2>
 			</ion-item>
 		</ion-list>

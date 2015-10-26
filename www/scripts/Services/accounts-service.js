@@ -4,12 +4,12 @@ function accountsService() {
 	var accounts = [
 			{
 				id: 0,
-				name: 'Default',
-				pic: 'http://i277.photobucket.com/albums/kk55/mardellbarrett/avatar_15544.gif'
+				name: 'Personal',
+				icon: 'fa-user'
 			}, {
 				id: 1,
 				name: 'My custom account',
-				pic: 'http://orig06.deviantart.net/ea2a/f/2010/213/6/d/facebook_default_picture_by_graffadetoart.jpg'
+				icon: 'fa-truck'
 			}
 	];
 
