@@ -1,0 +1,17 @@
+﻿<ion-view id="icons"
+		  title="Choose an icon"
+		  ng-init="init()">
+	<ion-content>
+		<ion-list>
+			<ion-item ng-repeat="icon in icons">
+				<div class="container">
+					<i class="fa {{account.icon}} fa-2x"></i>
+				</div>
+			</ion-item>
+		</ion-list>
+		<div class="bar bar-footer">
+			<button class="button button-clear">Ok</button>
+			<button class="button button-clear">Cancel</button>
+		</div>
+	</ion-content>
+</ion-view>

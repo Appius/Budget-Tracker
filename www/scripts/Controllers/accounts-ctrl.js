@@ -1,5 +1,15 @@
 ﻿'use strict';
 
+function accountCtrl($scope, accountsService) {
+	$scope.init = function() {
+		$scope.accounts = accountsService.getAll();
+	}
+
+	$scope.remove = function (account) {
+		console.log(account, '::not implemented yet');
+	};
+}
+
 function editAccountCtrl($scope, $stateParams, $state, accountsService) {
 	var accountId = parseFloat($stateParams.accountId);
 	if (isNaN(accountId)) {
@@ -25,6 +35,10 @@ function editAccountCtrl($scope, $stateParams, $state, accountsService) {
 		$state.go('tab.account');
 	}
 }
+
+angular
+	.module('app.controllers')
+	.controller('AccountsCtrl', ['$scope', 'AccountsService', accountCtrl]);
 
 angular
 	.module('app.controllers')

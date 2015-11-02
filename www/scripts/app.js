@@ -96,6 +96,24 @@ angular
 							controller: 'EditAccountCtrl'
 						}
 					}
+				})
+
+				/*
+				 * Icons
+				 */
+				.state('icons', {
+					url: '/icons',
+					cache: false,
+
+					templateUrl: 'partials/icons.html',
+					controller: 'IconsCtrl',
+
+					//views: {
+					//	'tab-accounts': {
+					//		templateUrl: 'partials/icons.html',
+					//		controller: 'IconsCtrl'
+					//	}
+					//}
 				});
 
 			// if none of the above states are matched, use this as the fallback

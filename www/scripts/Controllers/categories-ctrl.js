@@ -1,7 +1,6 @@
 ﻿'use strict';
 
 function categoriesCtrl($scope) {
-	
 }
 
 angular

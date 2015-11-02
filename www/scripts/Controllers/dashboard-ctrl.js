@@ -1,7 +1,6 @@
 ﻿'use strict';
 
 function dashboardCtrl($scope) {
-	
 }
 
 angular

@@ -15,9 +15,7 @@ function accountsService() {
 	];
 
 	return {
-		getAll: function () {
-			return accounts;
-		},
+		getAll: function () { return accounts; },
 
 		get: function(id) {
 			for (var i = 0; i < accounts.length; i++)
