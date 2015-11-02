@@ -26,7 +26,7 @@ angular
 				 * Tab (abstract)
 				 */
 				.state('tab', {
-					abstract: true,
+					"abstract": true,
 					url: '/tab',
 					templateUrl: 'partials/tabs.html'
 				})
@@ -88,6 +88,7 @@ angular
 				 */
 				.state('tab.accounts.edit', {
 					url: '/{accountId}',
+					cache: false,
 
 					views: {
 						'tab-accounts@tab': {

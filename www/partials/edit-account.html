@@ -1,19 +1,19 @@
 ﻿<ion-view id="add-account-view"
-		  title="{{titleAction}} account">
-	<ion-content>
-		<div class="list list-inset">
-			<label class="item item-input">
-				<input type="text" placeholder="Name" ng-model="name" required />
-			</label>
-			<label class="item item-input">
-				<input type="text" placeholder="Icon name" ng-model="icon" required />
-			</label>
-			<label class="item item-input">
-				<textarea placeholder="Comments (optional)" ng-model="comments"></textarea>
-			</label>
-			<button class="button button-block button-positive" ng-model="saveAccount">
-				{{action}} Account
-			</button>
-		</div>
-	</ion-content>
+          title="{{titleAction}} account">
+    <ion-content>
+        <div class="list list-inset">
+            <label class="item item-input">
+                <input type="text" placeholder="Name" ng-model="account.name" required />
+            </label>
+            <label class="item item-input">
+                Icon: <a href="#"><i class="fa {{account.icon}} fa-2x"></i></a>
+            </label>
+            <label class="item item-input">
+                <textarea placeholder="Comments (optional)" ng-model="account.comments"></textarea>
+            </label>
+            <button class="button button-block button-positive" ng-model="saveAccount">
+                {{action}} account
+            </button>
+        </div>
+    </ion-content>
 </ion-view>

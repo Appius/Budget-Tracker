@@ -1,11 +1,9 @@
 ﻿'use strict';
 
 function accountCtrl($scope, accountsService) {
-	$scope.accounts = accountsService.getAll();
-
-	$scope.edit = function (account) {
-		console.log(account, '::not implemented yet');
-	};
+	$scope.init = function() {
+		$scope.accounts = accountsService.getAll();
+	}
 
 	$scope.remove = function (account) {
 		console.log(account, '::not implemented yet');
