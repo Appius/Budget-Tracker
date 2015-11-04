@@ -103,17 +103,24 @@ angular
 				 */
 				.state('icons', {
 					url: '/icons',
-					cache: false,
+					//cache: false,
+					//templateUrl: 'partials/icons.html',
+					//controller: 'IconsCtrl'
 
-					templateUrl: 'partials/icons.html',
-					controller: 'IconsCtrl',
-
-					//views: {
-					//	'tab-accounts': {
-					//		templateUrl: 'partials/icons.html',
-					//		controller: 'IconsCtrl'
-					//	}
-					//}
+					views: {
+						'@': {
+							templateUrl: 'partials/icons.html',
+							controller: function($scope) {
+								debugger;
+							}
+						},
+						'tab-accounts@tab': {
+							templateUrl: 'partials/icons.html',
+							controller: function($scope) {
+								debugger;
+							}
+						}
+					}
 				});
 
 			// if none of the above states are matched, use this as the fallback
