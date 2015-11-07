@@ -6,6 +6,36 @@ function categoriesCtrl($scope, categoriesService) {
 	}
 }
 
+function editCategoryCtrl($scope, $stateParams, $state, categoriesService) {
+	var categoryId = parseFloat($stateParams.categoryId);
+	if (isNaN(categoryId)) {
+		console.error('Cannot parse categoryId as a number. Input: "', $stateParams.categoryId, '".');
+		return;
+	}
+
+	if (categoryId === -1) {
+		$scope.action = 'Create';
+		$scope.titleAction = 'Add';
+	} else {
+		$scope.action = 'Save';
+		$scope.titleAction = 'Edit';
+	}
+
+	$scope.account = categoriesService.Get(categoryId);
+
+	$scope.saveAccount = function (model) {
+		console.log(model, '::not implemented yet');
+		return;
+
+		categoriesService.Save(model);
+		$state.go('tab.account');
+	}
+}
+
 angular
 	.module('app.controllers')
 	.controller('CategoriesCtrl', ['$scope', 'CategoriesService', categoriesCtrl]);
+
+angular
+	.module('app.controllers')
+	.controller('EditCategoryCtrl', ['$scope', '$stateParams', '$state', 'CategoriesService', editCategoryCtrl]);

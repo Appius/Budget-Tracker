@@ -1,0 +1,19 @@
+﻿<ion-view id="add-category-view"
+		  title="{{titleAction}} category">
+	<ion-content>
+		<div class="list list-inset">
+			<label class="item item-input">
+				<input type="text" placeholder="Name" ng-model="category.name" required />
+			</label>
+			<label class="item item-input">
+				Icon: <a ui-sref="icons"><i class="icon {{category.icon}}"></i></a>
+			</label>
+			<label class="item item-input">
+				<textarea placeholder="Comments (optional)" ng-model="category.comments"></textarea>
+			</label>
+			<button class="button button-block button-positive" ng-model="savecategory">
+				{{action}} category
+			</button>
+		</div>
+	</ion-content>
+</ion-view>

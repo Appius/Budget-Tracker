@@ -71,6 +71,20 @@ angular
 				})
 
 				/*
+				 * Tabs > Categories > Edit
+				 */
+				.state('tab.categories.edit', {
+					url: '/{categoryId}',
+
+					views: {
+						'tab-categories@tab': {
+							templateUrl: 'partials/edit-category.html',
+							controller: 'EditCategoryCtrl'
+						}
+					}
+				})
+
+				/*
 				 * Tabs > Accounts
 				 */
 				.state('tab.accounts', {
