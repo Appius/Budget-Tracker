@@ -103,22 +103,15 @@ angular
 				 */
 				.state('icons', {
 					url: '/icons',
-					//cache: false,
-					//templateUrl: 'partials/icons.html',
-					//controller: 'IconsCtrl'
 
 					views: {
-						'@': {
+						'': {
 							templateUrl: 'partials/icons.html',
-							controller: function($scope) {
-								debugger;
-							}
+							controller: 'IconsCtrl'
 						},
-						'tab-accounts@tab': {
+						'tab-accounts@tab.accounts.edit': {
 							templateUrl: 'partials/icons.html',
-							controller: function($scope) {
-								debugger;
-							}
+							controller: 'IconsCtrl'
 						}
 					}
 				});

@@ -1,28 +1,42 @@
-﻿<ion-view view-title="Dashboard">
+﻿<ion-view view-title="Dashboard"
+		  ng-init="init()">
 	<ion-content class="padding">
-		<div class="list card">
-			<div class="item item-divider">Recent Updates</div>
-			<div class="item item-body">
-				<div>
-					There is a fire in <b>sector 3</b>
-				</div>
+		<div id="month">
+			<div id="month-navigation" class="button-bar">
+				<button class="button icon ion-chevron-left"
+						ng-click="prevMonth()"></button>
+				<button class="button icon ion-chevron-right"
+						ng-click="nextMonth()"></button>
+			</div>
+			<span>{{CurrentPeriod}}</span>
+			<select>
+				<option selected value="week">Week</option>
+				<option value="month">Month</option>
+				<option value="year">Year</option>
+			</select>
+		</div>
+		<div id="dashboard">
+			<div id="progress-bar">
+
+			</div>
+			<div class="row">
+				<label class="left">Expenses</label>
+				<span class="right">{{ExpensesValue}}</span>
+			</div>
+			<div class="row">
+				<label class="left">Income</label>
+				<span class="right">{{IncomeValue}}</span>
 			</div>
 		</div>
-		<div class="list card">
-			<div class="item item-divider">Health</div>
-			<div class="item item-body">
-				<div>
-					You ate an apple today!
-				</div>
-			</div>
-		</div>
-		<div class="list card">
-			<div class="item item-divider">Upcoming</div>
-			<div class="item item-body">
-				<div>
-					You have <b>29</b> meetings on your calendar tomorrow.
-				</div>
-			</div>
+		<div id="actions">
+			<button class="button button-outline button-positive icon-left ion-plus-circled"
+					ng-click="addTransaction('expence')">
+				Add Expense
+			</button>
+			<button class="button button-outline button-positive icon-left ion-plus-circled"
+					ng-click="addTransaction('income')">
+				Add Income
+			</button>
 		</div>
 	</ion-content>
 </ion-view>

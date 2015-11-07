@@ -1,23 +1,27 @@
 ﻿<ion-view id="accounts-view"
-          title="Accounts"
-          ng-init="init()">
-    <ion-nav-buttons side="secondary">
-        <button class="button button-balanced icon-left ion-plus-round button-clear" ui-sref="tab.accounts.edit({accountId: -1})"></button>
-    </ion-nav-buttons>
-    <ion-content>
-        <ion-list can-swipe="true">
-            <ion-item ng-repeat="account in accounts"
-                      type="item-text-wrap"
-                      href="#/tab/accounts/{{account.id}}">
-                <div class="container">
-                    <i class="fa {{account.icon}} fa-2x"></i>
-                </div>
-                {{account.name}}
+		  title="Accounts"
+		  ng-init="init()">
+	<ion-nav-buttons side="secondary">
+		<button class="button button-balanced icon-left ion-plus-round button-clear" ui-sref="tab.accounts.edit({accountId: -1})"></button>
+	</ion-nav-buttons>
+	<ion-content>
+		<ion-list can-swipe="true">
+			<ion-item ng-repeat="account in accounts"
+			          type="item-text-wrap"
+			          ui-sref="tab.accounts({account.id})">
+				<!--  href="#/tab/accounts/{{account.id}}" -->
+				<div class="container">
+					<i class="fa {{account.icon}} fa-2x"></i>
+				</div>
+				{{account.name}}
 
-                <ion-option-button class="button-assertive icon ion-trash-a"
-                                   ng-click="remove(item)">
-                </ion-option-button>
-            </ion-item>
-        </ion-list>
-    </ion-content>
+				<ion-option-button class="button-assertive icon ion-trash-a"
+				                   ng-click="remove(item)">
+				</ion-option-button>
+				<ion-delete-button class="ion-minus-circled"
+				                   ng-click="category.splice($index, 1)">
+				</ion-delete-button>
+			</ion-item>
+		</ion-list>
+	</ion-content>
 </ion-view>

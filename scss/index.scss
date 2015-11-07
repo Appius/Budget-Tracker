@@ -1,0 +1,21 @@
+﻿@import "mixins/common";
+
+.row { @include clearfix(); }
+
+.left { @include left(); }
+
+.right { @include right(); }
+
+#accounts-view ion-item {
+	div.container {
+		width: 50px;
+		text-align: center;
+		display: inline-block;
+	}
+
+	h2 {
+		display: inline-block;
+		vertical-align: top;
+		margin: 5px 5px 0;
+	}
+}

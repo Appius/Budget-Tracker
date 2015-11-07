@@ -1,7 +1,36 @@
-﻿<ion-view view-title="Categories">
+﻿<ion-view view-title="Categories"
+		  ng-init="init()">
 	<ion-content class="padding">
-		<h2>
-			This is categories tab.
-		</h2>
+		<ion-list show-delete="shouldShowDelete"
+				  show-reorder="shouldShowReorder"
+				  can-swipe="listCanSwipe">
+			<ion-item ng-repeat="category in categories">
+
+				<a class="item item-icon-left" href="#">
+					<i class="icon {{category.icon}}"></i>
+					<h2>{{category.name}}</h2>
+				</a>
+
+				<a class="item item-icon-left" href="#">
+					<i class="icon ion-mic-a"></i>
+					Record album
+					<span class="item-note">
+						Grammy
+					</span>
+				</a>
+
+				<ion-option-button class="button-info"
+								   ng-click="edit(category)">
+					Edit
+				</ion-option-button>
+				<ion-delete-button class="ion-minus-circled"
+								   ng-click="categories.splice($index, 1)">
+				</ion-delete-button>
+				<ion-reorder-button class="ion-navicon"
+				                    on-reorder="reorderItem(category, $fromIndex, $toIndex)">
+				</ion-reorder-button>
+
+			</ion-item>
+		</ion-list>
 	</ion-content>
 </ion-view>
