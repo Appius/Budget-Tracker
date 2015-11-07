@@ -1,35 +1,33 @@
 ﻿<ion-view view-title="Categories"
-		  ng-init="init()">
-	<ion-content class="padding">
-		<ion-list show-delete="shouldShowDelete"
-				  show-reorder="shouldShowReorder"
-				  can-swipe="listCanSwipe">
-			<ion-item ng-repeat="category in categories">
+		  ng-init="init()"
+		  id="category-view">
+	<ion-content>
+		<div id="category-type" class="button-bar">
+			<button class="button button-assertive button-small">
+				Expenses
+			</button>
+			<button class="button button-balanced button-small" disabled="disabled">
+				Income
+			</button>
+		</div>
+		<ion-list can-swipe="true">
+			<ion-item ng-repeat="category in categories"
+					  type="item-text-wrap"
+					  href="#/tab/categories/{{category.id}}"
+					  class="item item-icon-left">
+				<i class="icon {{category.icon}}"></i>
+				{{category.name}}
+				<span class="item-note">
+					{{category.type}}
+				</span>
 
-				<a class="item item-icon-left" href="#">
-					<i class="icon {{category.icon}}"></i>
-					<h2>{{category.name}}</h2>
-				</a>
-
-				<a class="item item-icon-left" href="#">
-					<i class="icon ion-mic-a"></i>
-					Record album
-					<span class="item-note">
-						Grammy
-					</span>
-				</a>
-
-				<ion-option-button class="button-info"
-								   ng-click="edit(category)">
-					Edit
+				<ion-option-button class="button-assertive ion-trash-a"
+								   style="font-size: 24px;"
+								   ng-click="categories.splice($index, 1)">
 				</ion-option-button>
 				<ion-delete-button class="ion-minus-circled"
-								   ng-click="categories.splice($index, 1)">
+								   ng-click="">
 				</ion-delete-button>
-				<ion-reorder-button class="ion-navicon"
-				                    on-reorder="reorderItem(category, $fromIndex, $toIndex)">
-				</ion-reorder-button>
-
 			</ion-item>
 		</ion-list>
 	</ion-content>

@@ -1,10 +1,21 @@
 ﻿@import "mixins/common";
+@import "progress-bar";
 
-.row { @include clearfix(); }
+.row {
+	@include clearfix();
+}
 
-.left { @include left(); }
+.left {
+	@include left();
+}
 
-.right { @include right(); }
+.right {
+	@include right();
+}
+
+.item-complex .item-content, .item-radio .item-content {
+	padding-right: 24px;
+}
 
 #accounts-view ion-item {
 	div.container {
@@ -17,5 +28,59 @@
 		display: inline-block;
 		vertical-align: top;
 		margin: 5px 5px 0;
+	}
+}
+
+#dashboard-view {
+	#period {
+		> * {
+			display: inline-table;
+			vertical-align: middle;
+		}
+
+		h4 {
+			margin: -5px 10px 0 10px;
+		}
+	}
+
+	#period-navigation {
+		//@include clearfix();
+	}
+
+	#dashboard {
+		width: 100%;
+		padding: 0 20px 20px;
+
+		> div.card {
+			margin-top: 0;
+
+			.row {
+				display: block;
+
+				span, label {
+					font-family: Franklin Gothic Medium,Franklin Gothic,ITC Franklin Gothic,Arial,sans-serif;
+					font-weight: 900;
+					font-size: 1.3em;
+				}
+
+				margin: 10px 0;
+			}
+		}
+	}
+
+	#actions {
+		text-align: center;
+		width: 100%;
+
+		button {
+			margin: 10px 40px;
+		}
+	}
+}
+
+#category-view {
+	#category-type {
+		width: 300px;
+		padding: 20px;
 	}
 }

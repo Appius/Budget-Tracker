@@ -8,18 +8,17 @@
 		<ion-list can-swipe="true">
 			<ion-item ng-repeat="account in accounts"
 			          type="item-text-wrap"
-			          ui-sref="tab.accounts({account.id})">
-				<!--  href="#/tab/accounts/{{account.id}}" -->
-				<div class="container">
-					<i class="fa {{account.icon}} fa-2x"></i>
-				</div>
+			          href="#/tab/accounts/{{account.id}}"
+					  class="item item-icon-left">
+				<i class="icon {{account.icon}}"></i>
 				{{account.name}}
 
-				<ion-option-button class="button-assertive icon ion-trash-a"
-				                   ng-click="remove(item)">
+				<ion-option-button class="button-assertive ion-trash-a"
+								   style="font-size: 24px;"
+								   ng-click="accounts.splice($index, 1)">
 				</ion-option-button>
 				<ion-delete-button class="ion-minus-circled"
-				                   ng-click="category.splice($index, 1)">
+				                   ng-click="">
 				</ion-delete-button>
 			</ion-item>
 		</ion-list>

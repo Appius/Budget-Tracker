@@ -5,12 +5,12 @@ function accountsService() {
 		{
 			id: 0,
 			name: 'Personal',
-			icon: 'fa-user',
+			icon: 'ion-ios-person',
 			comments: 'this is default account, cannot be removed.'
 		}, {
 			id: 1,
 			name: 'My custom account',
-			icon: 'fa-truck'
+			icon: 'ion-ios-person'
 		}
 	];
 

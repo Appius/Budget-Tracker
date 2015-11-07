@@ -5,17 +5,17 @@ function categoriesService() {
 		return [
 		{
 			name: 'Food',
-			icon: 'ion-plus',
+			icon: 'ion-email',
 			type: 'income'
 		},
 		{
 			name: 'Games',
-			icon: 'ion-game',
+			icon: 'ion-chatbubble-working',
 			type: 'expense'
 		},
 		{
 			name: 'Porno',
-			icon: 'ion-plus',
+			icon: 'ion-ios-telephone-outline',
 			type: 'expense'
 		}];
 	}
