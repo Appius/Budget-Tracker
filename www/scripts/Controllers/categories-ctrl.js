@@ -21,14 +21,14 @@ function editCategoryCtrl($scope, $stateParams, $state, categoriesService) {
 		$scope.titleAction = 'Edit';
 	}
 
-	$scope.account = categoriesService.Get(categoryId);
+	$scope.category = categoriesService.Get(categoryId);
 
 	$scope.saveAccount = function (model) {
 		console.log(model, '::not implemented yet');
 		return;
 
 		categoriesService.Save(model);
-		$state.go('tab.account');
+		$state.go('tab.category');
 	}
 }
 

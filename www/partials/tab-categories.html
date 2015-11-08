@@ -1,6 +1,9 @@
 ﻿<ion-view view-title="Categories"
 		  ng-init="init()"
 		  id="category-view">
+	<ion-nav-buttons side="secondary">
+		<button class="button button-balanced icon-left ion-plus-round button-clear" ui-sref="tab.categories.edit({categoryId: -1})"></button>
+	</ion-nav-buttons>
 	<ion-content>
 		<div id="category-type" class="button-bar">
 			<button class="button button-assertive button-small">

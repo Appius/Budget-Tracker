@@ -1,0 +1,43 @@
+﻿<ion-view id="add-transaction-view"
+		  title="{{titleAction}} transaction">
+	<ion-content>
+		<div class="card">
+			<div class="item item-text-wrap">
+				<div id="category-type-c" class="button-bar">
+					<button class="button button-assertive button-small">
+						Expenses
+					</button>
+					<button class="button button-balanced button-small" disabled="disabled">
+						Income
+					</button>
+				</div>
+				<div class="item item-input">
+					<span class="input-label">Date</span>
+					<input type="date" ng-model="transaction.date" />
+				</div>
+				<div class="item item-input">
+					<span class="input-label">Category</span>
+					<select>
+						<option ng-repeat="category in categories"
+								value="{{category.id}}">
+							{{category.name}}
+						</option>
+					</select>
+				</div>
+				<div class="item item-input">
+					<span class="input-label">Amount</span>
+					<input type="number" />
+				</div>
+			</div>
+		</div>
+		<div class="card">
+			<div class="item item-text-wrap">
+				<span>Note</span>
+				<textarea rows="10" ng-model="transaction.note"></textarea>
+			</div>
+		</div>
+		<button class="button button-block button-positive" ng-model="saveTransaction">
+			{{action}} transaction
+		</button>
+	</ion-content>
+</ion-view>

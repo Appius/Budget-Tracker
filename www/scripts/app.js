@@ -58,6 +58,19 @@ angular
 				})
 
 				/*
+				 * Tabs > Transactions > Edit
+				 */
+				.state('tab.transactions.edit', {
+					url: '/{transactionId}',
+					views: {
+						'tab-transactions@tab': {
+							templateUrl: 'partials/edit-transaction.html',
+							controller: 'TransactionsCtrl'
+						}
+					}
+				})
+
+				/*
 				 * Tabs > Categories
 				 */
 				.state('tab.categories', {

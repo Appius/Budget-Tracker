@@ -1,46 +1,91 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-    <title>Budget Tracker</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+	<title>Budget Tracker</title>
 
-    <!-- Libs references-->
-    <link href="lib/ionic.min.css" rel="stylesheet" />
-    <link href="lib/font-awesome.min.css" rel="stylesheet" />
-    
-    <!-- Budget Tracker references -->
-    <link href="css/index.min.css" rel="stylesheet" />
+	<!-- Libs references-->
+	<link href="lib/ionic.min.css" rel="stylesheet" />
+	<link href="lib/font-awesome.min.css" rel="stylesheet" />
+	
+	<!-- Budget Tracker references -->
+	<link href="css/index.min.css" rel="stylesheet" />
 </head>
 <body ng-app="app">
-    <ion-nav-bar class="bar-stable">
-        <ion-nav-back-button>
-        </ion-nav-back-button>
-    </ion-nav-bar>
+	<ion-nav-bar class="bar-stable">
+		<ion-nav-back-button>
+		</ion-nav-back-button>
+	</ion-nav-bar>
 
-    <ion-nav-view></ion-nav-view>
+	<ion-side-menus>
+		<ion-side-menu side="left" width="400">
+			<ion-header-bar class="bar bar-header bar-assertive">
+				<h3 class="title">Menu</h3>
+			</ion-header-bar>
+			<ion-content has-header="true">
+				<ion-list>
+					<ion-item ui-sref="tab.dashboard" class="item item-icon-left" menu-close>
+						<i class="icon ion-ios-home"></i> 
+						Dashboard
+					</ion-item>
+					<ion-item ui-sref="tab.transactions" class="item item-icon-left" menu-close>
+						<i class="icon ion-ios-pulse"></i>
+						Transactions
+					</ion-item>
+					<ion-item ui-sref="tab.categories" class="item item-icon-left" menu-close>
+						<i class="icon ion-ios-paper"></i>
+						Categories
+					</ion-item>
+					<ion-item ui-sref="tab.accounts" class="item item-icon-left" menu-close>
+						<i class="icon ion-ios-people"></i>
+						Accounts
+					</ion-item>
+					<ion-item class="item-divider">
+					</ion-item>
+					<ion-item ui-sref="tab.settings" class="item item-icon-left" menu-close>
+						<i class="icon ion-ios-people"></i>
+						Settings
+					</ion-item>
+					<ion-item ui-sref="tab.contribute" class="item item-icon-left" menu-close>
+						<i class="icon ion-ios-people"></i>
+						Contribute
+					</ion-item>
+					<ion-item ui-sref="tab.about" class="item item-icon-left" menu-close>
+						<i class="icon ion-ios-people"></i>
+						About
+					</ion-item>
+				</ion-list>
+			</ion-content>
+		</ion-side-menu>
 
-    <!-- Ionic Bundle reference (ionic + all angular)-->
-    <script src="lib/ionic.bundle.min.js"></script>
+		<ion-side-menu-content>
+			<ion-nav-view></ion-nav-view>
+		</ion-side-menu-content>
 
-    <!-- ReSharper disable Html.PathError -->
-    <!-- Cordova reference, this is added to your app when it's built. -->
-    <script src="cordova.js"></script>
-    <!-- ReSharper restore Html.PathError -->
-    <script src="scripts/platformOverrides.js"></script>
+	</ion-side-menus>
 
-    <script src="scripts/app.js"></script>
+	<!-- Ionic Bundle reference (ionic + all angular)-->
+	<script src="lib/ionic.bundle.min.js"></script>
 
-    <script src="scripts/controllers/accounts-ctrl.js"></script>
-    <script src="scripts/controllers/categories-ctrl.js"></script>
-    <script src="scripts/controllers/dashboard-ctrl.js"></script>
-    <script src="scripts/controllers/transactions-ctrl.js"></script>
-    <script src="scripts/controllers/icons-ctrl.js"></script>
+	<!-- ReSharper disable Html.PathError -->
+	<!-- Cordova reference, this is added to your app when it's built. -->
+	<script src="cordova.js"></script>
+	<!-- ReSharper restore Html.PathError -->
+	<script src="scripts/platformOverrides.js"></script>
 
-    <script src="scripts/services/accounts-service.js"></script>
-    <script src="scripts/services/categories-service.js"></script>
-    <script src="scripts/services/dashboard-service.js"></script>
-    <script src="scripts/services/transactions-service.js"></script>
-    <script src="scripts/services/icons-service.js"></script>
+	<script src="scripts/app.js"></script>
+
+	<script src="scripts/controllers/accounts-ctrl.js"></script>
+	<script src="scripts/controllers/categories-ctrl.js"></script>
+	<script src="scripts/controllers/dashboard-ctrl.js"></script>
+	<script src="scripts/controllers/transactions-ctrl.js"></script>
+	<script src="scripts/controllers/icons-ctrl.js"></script>
+
+	<script src="scripts/services/accounts-service.js"></script>
+	<script src="scripts/services/categories-service.js"></script>
+	<script src="scripts/services/dashboard-service.js"></script>
+	<script src="scripts/services/transactions-service.js"></script>
+	<script src="scripts/services/icons-service.js"></script>
 </body>
 </html>
