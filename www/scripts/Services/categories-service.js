@@ -21,10 +21,8 @@ function categoriesService() {
 			type: 'expense'
 		}];
 
-	function getAll() { return categories; }
-
 	return {
-		GetAll: getAll,
+		GetAll: function () { return categories; },
 		Get: function(categoryId) {
 			for (var i = 0; i < categories.length; i++)
 				if (categories[i].id === categoryId)

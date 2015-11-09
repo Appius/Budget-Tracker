@@ -1,28 +1,29 @@
 ﻿<ion-view view-title="Transactions"
-          ng-init="init()"
-          id="transaction-view">
+		  ng-init="init()"
+		  id="transaction-view">
 	<ion-nav-buttons side="secondary">
-		<button class="button button-balanced icon-left ion-plus-round button-clear" ui-sref="tab.transactions.edit({transactionId: -1})"></button>
+		<button class="button button-balanced icon-left ion-plus-round button-clear"
+		        ui-sref="tab.transactions.edit({transactionId: -1})"></button>
 	</ion-nav-buttons>
 	<ion-content class="padding">
-		<ion-list>
-			<ion-item ng-reapeat="transaction in transactions"
-					  type="item-text-wrap"
-					  href="#/tab/categories/{{transaction.id}}"
-					  class="item item-icon-left">
+		<ion-list can-swipe="true">
+			<ion-item ng-repeat="transaction in transactions"
+			          type="item-text-wrap"
+			          href="#/tab/transactions/{{transaction.id}}"
+			          class="item item-icon-left">
 				<i class="icon {{transaction.category.icon}}"></i>
-				{{transaction.desciption}}
+				{{transaction.description}}
 				<p>{{transaction.category.type}}</p>
 				<span class="item-note">
-					{{transaction.value}}
+					{{transaction.amount}}
 				</span>
 
 				<ion-option-button class="button-assertive ion-trash-a"
-								   style="font-size: 24px;"
-								   ng-click="transactions.splice($index, 1)">
+				                   style="font-size: 24px;"
+				                   ng-click="transactions.splice($index, 1)">
 				</ion-option-button>
 				<ion-delete-button class="ion-minus-circled"
-								   ng-click="">
+				                   ng-click="">
 				</ion-delete-button>
 			</ion-item>
 
